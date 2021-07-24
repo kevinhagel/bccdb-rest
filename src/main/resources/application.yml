@@ -3,6 +3,6 @@ spring:
     mongodb:
       host: localhost
       port: 27017
-      username: bccdb_user
-      password: bccdb_password
-      database: bccdb
+      username: root
+      password: pass
+      database: mongodb

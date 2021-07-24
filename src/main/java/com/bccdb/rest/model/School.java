@@ -1,14 +1,12 @@
 package com.bccdb.rest.model;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +19,7 @@ import java.util.List;
  * @since 2021-07-24
  */
 @Data
+@Builder
 @Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor(access= AccessLevel.PRIVATE, force=true)@Document
@@ -30,8 +29,10 @@ public class School {
 
   private String name;
   private List<String> contacts;
+  private String contactName;
   private String contactPhone;
-  private String homePhoneNumber;
-  private String address;
+  private String addressStreet;
+  private String addressCity;
   private String notes;
+  private List<String> defaultClassesList = new ArrayList<>();
 }

@@ -1,13 +1,12 @@
 package com.bccdb.rest.model;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Date;
 
 
 /**
@@ -18,6 +17,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @since 2021-07-24
  */
 @Data
+@Builder
 @Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor(access= AccessLevel.PRIVATE, force=true)@Document
@@ -25,9 +25,12 @@ public class Parent {
 
   @Id
   private String id;
-
-  private String name;
-  private String phoneNumber;
+  private String cellPhoneNumber;
+  private String email;
+  private String familyName;
+  private String firstName;
   private String homePhoneNumber;
-  private String address;
+  private String notes;
+  private String officePhoneNumber;
+  private String workPhoneNumber;
 }
