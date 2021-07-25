@@ -8,7 +8,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * CourseController
+ * CourseController providing reactive access to instructors
  *
  * @author Kevin Hagel
  * @since 2021-07-25
@@ -22,7 +22,7 @@ public class CourseController {
 
 
   @GetMapping
-  public Flux<CourseDto> courses() {
+  public Flux<CourseDto> getCourses() {
     return courseService.getCourses();
   }
 

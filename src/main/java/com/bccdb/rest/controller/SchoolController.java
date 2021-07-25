@@ -11,7 +11,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * SchoolController
+ * SchoolController providing reactive access to schools.
  *
  * @author Kevin Hagel
  * @since 2021-07-25
@@ -29,7 +29,7 @@ public class SchoolController {
    * @return all the schools
    */
   @GetMapping
-  public Flux<SchoolDto> schools() {
+  public Flux<SchoolDto> getSchools() {
     return service.getSchools();
   }
 

@@ -26,7 +26,7 @@ public class ParentService {
   /**
    * Get all parents.
    *
-   * @return a flux of schools.
+   * @return a flux of parents.
    */
   public Flux<ParentDto> getParents() {
     return repository
@@ -37,7 +37,7 @@ public class ParentService {
   /**
    * Get a parent by id
    *
-   * @return a school if found.
+   * @return a parent if found.
    */
   public Mono<ParentDto> getParent(String id) {
     return repository
@@ -47,10 +47,10 @@ public class ParentService {
 
 
   /**
-   * Persist a new school
+   * Persist a new parent
    *
-   * @param parentDtoMono the mono containing the school from the post.
-   * @return the newly created school dto version.
+   * @param parentDtoMono the mono containing the parent from the post.
+   * @return the newly created parent dto version.
    */
   public Mono<ParentDto> saveParent(Mono<ParentDto> parentDtoMono) {
     return parentDtoMono
@@ -66,7 +66,7 @@ public class ParentService {
    * @param id            the id of the parent to update
    * @return a mono containin the updated parent dto.
    */
-  public Mono<ParentDto> updateStudent(Mono<ParentDto> parentDtoMono, String id) {
+  public Mono<ParentDto> updateParent(Mono<ParentDto> parentDtoMono, String id) {
     return repository.findById(id)
         .flatMap(s -> parentDtoMono.map(MapperUtils::dtoToEntity)
             .doOnNext(e -> e.setId(id)))
@@ -78,7 +78,7 @@ public class ParentService {
   /**
    * Delete an existing parent
    *
-   * @param id the id of the school
+   * @param id the id of the parent
    * @return a void mono.
    */
   public Mono<Void> deleteParent(String id) {
