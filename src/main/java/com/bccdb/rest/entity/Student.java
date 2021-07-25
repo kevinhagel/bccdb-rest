@@ -1,11 +1,14 @@
 package com.bccdb.rest.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +22,11 @@ import java.util.List;
 @Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Document
-public class Student {
+@Document(collection = "students")
+public class Student implements Serializable {
+
+  private static final long serialVersionUID = 8483879705356278436L;
+
   @Id
   private String id;
   private String firstName;

@@ -5,6 +5,7 @@ import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,11 @@ import java.util.List;
 @Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class School {
+@Document(collection = "schools")
+public class School implements Serializable {
+
+  private static final long serialVersionUID = 7988840167169851754L;
+
   @Id
   private String id;
 

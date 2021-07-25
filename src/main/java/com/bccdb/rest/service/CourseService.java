@@ -21,9 +21,9 @@ public class CourseService {
   private CourseRepository repository;
 
   /**
-   * Get all students.
+   * Get all courses.
    *
-   * @return a flux of students.
+   * @return a flux of courses.
    */
   public Flux<CourseDto> getCourses() {
     return repository
@@ -32,9 +32,9 @@ public class CourseService {
   }
 
   /**
-   * Get all students.
+   * get course by id
    *
-   * @return a flux of students.
+   * @return the course dto if found.
    */
   public Mono<CourseDto> getCourse(String id) {
     return repository

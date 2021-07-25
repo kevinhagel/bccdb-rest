@@ -1,11 +1,7 @@
 package com.bccdb.rest.utils;
 
-import com.bccdb.rest.dto.CourseDto;
-import com.bccdb.rest.dto.ParentDto;
-import com.bccdb.rest.dto.StudentDto;
-import com.bccdb.rest.entity.Course;
-import com.bccdb.rest.entity.Parent;
-import com.bccdb.rest.entity.Student;
+import com.bccdb.rest.dto.*;
+import com.bccdb.rest.entity.*;
 import org.springframework.beans.BeanUtils;
 
 /**
@@ -65,7 +61,6 @@ public class MapperUtils {
   }
 
 
-
   /**
    * Maps a {@link Parent} to a {@link ParentDto}
    *
@@ -88,6 +83,55 @@ public class MapperUtils {
     Parent parent = new Parent();
     BeanUtils.copyProperties(parentDto, parent);
     return parent;
+  }
+
+  /**
+   * Maps a {@link School} to a {@link SchoolDto}
+   *
+   * @param school the source school.
+   * @return the destination school dto.
+   */
+  public static SchoolDto entityToDto(School school) {
+    SchoolDto schoolDto = new SchoolDto();
+    BeanUtils.copyProperties(school, schoolDto);
+    return schoolDto;
+  }
+
+  /**
+   * Maps a {@link SchoolDto} to a {@link School}
+   *
+   * @param schoolDto the source school dto.
+   * @return the destination school.
+   */
+  public static School dtoToEntity(SchoolDto schoolDto) {
+    School parent = new School();
+    BeanUtils.copyProperties(schoolDto, parent);
+    return parent;
+  }
+
+
+  /**
+   * Maps a {@link Instructor} to a {@link InstructorDto}
+   *
+   * @param instructor the source instructor.
+   * @return the destination instructor dto.
+   */
+  public static InstructorDto entityToDto(Instructor instructor) {
+    InstructorDto instructorDto = new InstructorDto();
+    BeanUtils.copyProperties(instructor, instructorDto);
+    return instructorDto;
+  }
+
+  /**
+   * Maps a {@link InstructorDto} to a {@link Instructor}
+   *
+   * @param instructorDto the source school dto.
+   * @return the destination school.
+   */
+  public static Instructor dtoToEntity(InstructorDto instructorDto) {
+    Instructor instructor = new Instructor();
+    BeanUtils.copyProperties(instructorDto, instructor);
+    return instructor;
   }
 
 

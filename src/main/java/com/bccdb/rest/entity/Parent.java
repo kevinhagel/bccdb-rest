@@ -5,6 +5,8 @@ import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
+
 
 /**
  * Parent is responsible for 0, 1, or many students.  A parent with 0 students is probably an archived parent.  Parents
@@ -17,8 +19,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Document
-public class Parent {
+@Document(collection = "parents")
+public class Parent implements Serializable {
+
+  private static final long serialVersionUID = 4215278649259515312L;
 
   @Id
   private String id;

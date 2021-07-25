@@ -33,7 +33,7 @@ public class CourseController {
    * @return a course, possibly empty !
    */
   @GetMapping("/{id}")
-  public Mono<CourseDto> course(@PathVariable String id) {
+  public Mono<CourseDto> getCourse(@PathVariable String id) {
     return courseService.getCourse(id);
   }
 
@@ -56,7 +56,7 @@ public class CourseController {
    * @return the updated course.
    */
   @PutMapping("/update/{id}")
-  public Mono<CourseDto> saveCourse(@RequestBody Mono<CourseDto> courseDtoMono, @PathVariable String id) {
+  public Mono<CourseDto> updateCourse(@RequestBody Mono<CourseDto> courseDtoMono, @PathVariable String id) {
     return courseService.updateCourse(courseDtoMono, id);
   }
 
