@@ -1,17 +1,11 @@
 package com.bccdb.rest.dto;
 
-import com.bccdb.rest.model.Student;
+import com.bccdb.rest.entity.Student;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * StudentDto is a dto transferring {@link Student} information to the rest client.
@@ -20,7 +14,6 @@ import java.util.List;
  * @since 2021-07-24
  */
 @Data
-@Builder
 @Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor

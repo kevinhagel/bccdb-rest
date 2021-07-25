@@ -1,6 +1,6 @@
 package com.bccdb.rest.dto;
 
-import com.bccdb.rest.model.School;
+import com.bccdb.rest.entity.School;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,7 +17,6 @@ import java.util.List;
  * @since 2021-07-24
  */
 @Data
-@Builder
 @Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor

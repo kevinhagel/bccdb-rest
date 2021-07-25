@@ -1,4 +1,4 @@
-package com.bccdb.rest.model;
+package com.bccdb.rest.entity;
 
 import lombok.*;
 import lombok.experimental.Accessors;
@@ -7,7 +7,6 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,9 +16,9 @@ import java.util.List;
  * @since 2021-07-24
  */
 @Data
-@Builder
 @Accessors(chain = true)
 @AllArgsConstructor
+@NoArgsConstructor
 @Document
 public class Student {
   @Id

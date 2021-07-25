@@ -1,4 +1,4 @@
-package com.bccdb.rest.model;
+package com.bccdb.rest.entity;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -20,14 +20,12 @@ import java.util.List;
 @Data
 @Accessors(chain = true)
 @AllArgsConstructor
-@NoArgsConstructor(access= AccessLevel.PRIVATE, force=true)@Document
+@NoArgsConstructor
 public class Course {
   @Id
   private String id;
-
   private String name;
 
-  @DBRef(lazy = true)
-  private List<Student> students;
+
 
 }

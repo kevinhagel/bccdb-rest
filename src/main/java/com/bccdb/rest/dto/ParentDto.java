@@ -1,10 +1,8 @@
 package com.bccdb.rest.dto;
 
-import com.bccdb.rest.model.Parent;
+import com.bccdb.rest.entity.Parent;
 import lombok.*;
 import lombok.experimental.Accessors;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 
 /**
@@ -14,7 +12,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @since 2021-07-24
  */
 @Data
-@Builder
 @Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor
