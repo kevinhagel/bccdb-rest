@@ -1,3 +1,3 @@
-.title This is my readme
-cinamon
+.TITLE THIS IS MY README
+CINAMON
 
